@@ -42,6 +42,16 @@ $ npm run dev
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000> 
 
+### Testes unitários
+# Para executar os testes unitários, acesse a pasta do projeto no terminal/cmd
+$ cd ewally
+
+# Vá para a pasta do service-grpc
+$ cd service-grpc
+
+# Execute os testes
+$ npm run test:unit
+
 
 # A documentação com swagger estará disponível em <http://localhost:3000/docs>  
 
