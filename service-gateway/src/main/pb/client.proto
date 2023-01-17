@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+message Person {
+  string cpf = 1;
+  string name = 2;
+}
+
+message CreatePersonRequest {
+  Person person = 1;
+}
+
+message CreatePersonResponse {
+  string message = 1;
+  string error = 3;
+}
+
+message GetPersonRequest {
+  string cpf = 1;
+}
+
+message GetPersonResponse {
+  string message = 1;
+  Person person = 2;
+  string error = 3;
+}
+
+
+message CleanDatabaseRequest {
+
+}
+
+message CleanDatabaseResponse {
+  string message = 1;
+  string error = 2;
+}
+
+
+message CreateRelationshipRequest {
+  string cpf1 = 1;
+  string cpf2 = 2;
+}
+
+message CreateRelationshipResponse {
+  string message = 1;
+  string error = 2;
+}
+
+message GetRecommendationsRequest {
+  string cpf = 1;
+}
+
+message GetRecommendationsResponse {
+  string message = 1;
+  repeated string recommendations = 2;
+  string error = 3;
+}
+
+service ClientService {
+  rpc CreatePerson (CreatePersonRequest) returns (CreatePersonResponse);
+  rpc GetPerson (GetPersonRequest) returns (GetPersonResponse);
+  rpc CleanDatabase (CleanDatabaseRequest) returns (CleanDatabaseResponse);
+  rpc CreateRelationship (CreateRelationshipRequest) returns (CreateRelationshipResponse);
+  rpc GetRecommendations (GetRecommendationsRequest) returns (GetRecommendationsResponse);
+}
