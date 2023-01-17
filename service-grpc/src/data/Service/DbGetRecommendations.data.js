@@ -58,7 +58,7 @@ export class DbGetRecommendations {
 
     if (sortedRecommendations.length === 0) {
       return {
-        error: 'No recommendations found',
+        error: 'Recommendations not found',
       }
     }
 
